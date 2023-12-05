@@ -61,7 +61,7 @@
               </dt>
 
               <dd>
-                <a class="hover:text-gray-900" href="mailto:hello@example.com">
+                <a class="hover:text-gray-900" href="mailto:jay@praxand.com">
                   jay@praxand.com
                 </a>
               </dd>
