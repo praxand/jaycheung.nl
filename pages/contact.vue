@@ -71,6 +71,7 @@
       </div>
 
       <form
+        @submit.prevent="submitForm"
         action="https://api.web3forms.com/submit"
         method="POST"
         class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48 h-screen"
@@ -82,6 +83,8 @@
         />
 
         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <input type="hidden" name="redirect" value="https://jaycheung.nl/contact">
 
         <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -98,10 +101,20 @@
                   type="text"
                   name="first-name"
                   id="first-name"
+                  v-model="formData.firstName"
                   autocomplete="given-name"
                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  :class="{
+                    'ring-red-500 focus:ring-red-500': v$.firstName.$error,
+                    'ring-[#42d392] ': !v$.firstName.$invalid,
+                  }"
+                  @change="v$.firstName.$touch"
                 />
               </div>
+
+              <span class="text-xs text-red-500" v-if="v$.firstName.$error">
+                {{ v$.firstName.$errors[0].$message }}
+              </span>
             </div>
 
             <div>
@@ -117,10 +130,20 @@
                   type="text"
                   name="last-name"
                   id="last-name"
+                  v-model="formData.lastName"
                   autocomplete="family-name"
                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  :class="{
+                    'ring-red-500 focus:ring-red-500': v$.lastName.$error,
+                    'ring-[#42d392] ': !v$.lastName.$invalid,
+                  }"
+                  @change="v$.lastName.$touch"
                 />
               </div>
+
+              <span class="text-xs text-red-500" v-if="v$.lastName.$error">
+                {{ v$.lastName.$errors[0].$message }}
+              </span>
             </div>
 
             <div class="sm:col-span-2">
@@ -136,10 +159,20 @@
                   type="email"
                   name="email"
                   id="email"
+                  v-model="formData.email"
                   autocomplete="email"
                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  :class="{
+                    'ring-red-500 focus:ring-red-500': v$.email.$error,
+                    'ring-[#42d392] ': !v$.email.$invalid,
+                  }"
+                  @change="v$.email.$touch"
                 />
               </div>
+
+              <span class="text-xs text-red-500" v-if="v$.email.$error">
+                {{ v$.email.$errors[0].$message }}
+              </span>
             </div>
 
             <div class="sm:col-span-2">
@@ -173,10 +206,20 @@
                 <textarea
                   name="message"
                   id="message"
+                  v-model="formData.message"
                   rows="4"
                   class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  :class="{
+                    'ring-red-500 focus:ring-red-500': v$.message.$error,
+                    'ring-[#42d392] ': !v$.message.$invalid,
+                  }"
+                  @change="v$.message.$touch"
                 />
               </div>
+
+              <span class="text-xs text-red-500" v-if="v$.message.$error">
+                {{ v$.message.$errors[0].$message }}
+              </span>
             </div>
           </div>
 
@@ -196,6 +239,8 @@
 
 <script setup>
 import { EnvelopeIcon } from "@heroicons/vue/24/outline";
+import { useVuelidate } from '@vuelidate/core';
+import { required, email, minLength, helpers } from '@vuelidate/validators';
 
 useSeoMeta({
   title: "Contact | Jay Cheung",
@@ -205,4 +250,39 @@ useSeoMeta({
   ogImage: "https://jaycheung.nl/profile.png",
   twitterCard: 'summary_large_image',
 });
+
+const formData = reactive({
+  firstName: '',
+  lastName: '',
+  email: '',
+  message: '',
+});
+
+const rules = computed(() => {
+  return {
+    firstName: {
+      required: helpers.withMessage('First name is required', required),
+    },
+    lastName: {
+      required: helpers.withMessage('Last name is required', required),
+    },
+    email: {
+      required: helpers.withMessage('Email is required', required),
+      email: helpers.withMessage('Email must be valid', email),
+    },
+    message: {
+      required: helpers.withMessage('Message is required', required),
+      minLength: helpers.withMessage('Message must be at least 10 characters', minLength(10)),
+    },
+  };
+});
+
+const v$ = useVuelidate(rules, formData);
+
+const submitForm = () => {
+  v$.value.$validate();
+  if (!v$.value.$error) {
+    document.querySelector('form').submit();
+  }
+};
 </script>
