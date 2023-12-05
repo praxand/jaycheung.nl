@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   app: {
     head: {
-      title: "Jay Cheung",
       link: [
         {
           rel: "icon",
@@ -16,11 +15,6 @@ export default defineNuxtConfig({
         },
       ],
       meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Jay Cheung's personal website",
-        },
         {
           name: "theme-color",
           content: "#ffffff",
