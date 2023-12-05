@@ -81,6 +81,8 @@
           value="c4ea3258-c70b-45ae-a9e2-1fa36a5bbfd5"
         />
 
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
         <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
