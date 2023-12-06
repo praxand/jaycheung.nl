@@ -7,7 +7,7 @@
 <script setup>
 useHead({
   bodyAttrs: {
-    class: "bg-gray-100 g",
+    class: "bg-gray-100",
   },
 });
 </script>
