@@ -23,7 +23,7 @@
           <h3 class="text-lg font-medium text-gray-900">
             {{ feature.name }}
           </h3>
-          <p class="mt-2 text-sm text-gray-500">{{ feature.description }}</p>
+          <p class="mt-2 text-sm text-gray-600">{{ feature.description }}</p>
         </div>
 
         <div
