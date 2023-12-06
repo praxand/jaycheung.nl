@@ -36,7 +36,7 @@
             </p>
 
             <p class="truncate text-sm text-gray-500">
-              {{ experience.startDate }} - {{ experience.endDate }} • {{ experience.timeDifference }}
+              {{ experience.startDate }} - {{ experience.endDate }}
             </p>
 
             <!-- <p class="truncate text-sm text-gray-500">
@@ -50,7 +50,7 @@
 </template>
 
 <script setup>
-let experiences = [
+const experiences = [
   {
     title: "Part of the team",
     companyName: "Bit Academy",
@@ -72,29 +72,4 @@ let experiences = [
     website: "https://smit.net/",
   },
 ];
-
-const calculateTimeDifference = (startDate, endDate) => {
-  const start = new Date(startDate);
-  const end = endDate === "Present" ? new Date() : new Date(endDate);
-
-  const years = end.getFullYear() - start.getFullYear();
-  const months = end.getMonth() - start.getMonth() + 1;
-
-  return years === 0
-    ? months === 1
-      ? `${months} mo`
-      : `${months} mos`
-    : months === 0
-    ? `${years} yr`
-    : `${years} yr ${months} mos`;
-};
-
-experiences = experiences.map((experience) => {
-  const { startDate, endDate } = experience;
-
-  return {
-    ...experience,
-    timeDifference: calculateTimeDifference(startDate, endDate),
-  };
-});
 </script>
