@@ -16,12 +16,8 @@ export default defineNuxtConfig({
       ],
       meta: [
         {
-          name: "viewport",
-          content: "width=device-width, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no",
-        },
-        {
           name: "theme-color",
-          content: "#ffffff",
+          content: "#f3f4f6",
         },
       ],
       htmlAttrs: {
