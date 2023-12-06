@@ -29,8 +29,8 @@
           Beyond the screen, I have a rich tapestry of interests. In my younger
           years, I kicked a soccer ball around the field, experiencing the
           thrill of teamwork and competition. Additionally, the melody of the
-          violin used to resonate in my life for 9 until the beginning of 2023,
-          adding a harmonious balance to my pursuits.
+          violin used to resonate in my life for 9 years until the beginning of
+          2023, adding a harmonious balance to my pursuits.
         </p>
 
         <p class="mt-6 text-lg leading-8 text-gray-600">
