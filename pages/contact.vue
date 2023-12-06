@@ -251,7 +251,7 @@ useSeoMeta({
   ogTitle: "Contact | Jay Cheung",
   description: "I value your feedback and inquiries. Whether you have a question, suggestion, or just want to say hello, I'd love to hear from you. Feel free to reach out to us using the contact form below, and I will get back to you as soon as possible. Your input is important to me as I strive to enhance your experience and provide the best possible service. Thank you for getting in touch with me!",
   ogDescription: "I value your feedback and inquiries. Whether you have a question, suggestion, or just want to say hello, I'd love to hear from you. Feel free to reach out to us using the contact form below, and I will get back to you as soon as possible. Your input is important to me as I strive to enhance your experience and provide the best possible service. Thank you for getting in touch with me!",
-  ogImage: "https://jaycheung.nl/profile.png",
+  ogImage: "https://jaycheung.nl/images/profile.png",
   twitterCard: 'summary_large_image',
 });
 
