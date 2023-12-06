@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       meta: [
         {
           name: "theme-color",
-          content: "#f3f4f6",
+          content: "#ffffff",
         },
       ],
       htmlAttrs: {
