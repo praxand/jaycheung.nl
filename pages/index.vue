@@ -9,6 +9,16 @@
 
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl">
+      <div class="grid grid-cols-1 gap-4">
+        <Experiences />
+
+        <Educations />
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
       <Faq />
     </div>
   </div>

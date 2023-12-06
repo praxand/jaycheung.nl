@@ -23,16 +23,6 @@
             </a>
 
             <a
-              href="/about"
-              class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500"
-              :class="{
-                ' border-b-2 border-indigo-500 text-gray-900': $route.path === '/about',
-              }"
-            >
-              About
-            </a>
-
-            <a
               href="/contact"
               class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500"
               :class="{
@@ -62,7 +52,7 @@
         <DisclosureButton
           as="a"
           href="/"
-          class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500"
+          class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-500"
           :class="{
             'border-current border-indigo-500 bg-indigo-50 text-indigo-700':
               $route.path === '/',
@@ -73,20 +63,8 @@
 
         <DisclosureButton
           as="a"
-          href="/about"
-          class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500"
-          :class="{
-            'border-current border-indigo-500 bg-indigo-50 text-indigo-700':
-              $route.path === '/about',
-          }"
-        >
-          About
-        </DisclosureButton>
-
-        <DisclosureButton
-          as="a"
           href="/contact"
-          class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500"
+          class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-500"
           :class="{
             'border-current border-indigo-500 bg-indigo-50 text-indigo-700':
               $route.path === '/contact',
