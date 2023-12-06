@@ -80,13 +80,27 @@ const calculateTimeDifference = (startDate, endDate) => {
   const years = end.getFullYear() - start.getFullYear();
   const months = end.getMonth() - start.getMonth() + 1;
 
-  return years === 0
-    ? months === 1
-      ? `${months} mo`
-      : `${months} mos`
-    : months === 0
-    ? `${years} yr`
-    : `${years} yr ${months} mos`;
+  // return years === 0
+  //   ? months === 1
+  //     ? `${months} mo`
+  //     : `${months} mos`
+  //   : months === 0
+  //   ? `${years} yr`
+  //   : `${years} yr ${months} mos`;
+
+  if (years === 0) {
+    if (months === 1) {
+      return `${months} mo`;
+    } else {
+      return `${months} mos`;
+    }
+  } else {
+    if (months === 0) {
+      return `${years} yr`;
+    } else {
+      return `${years} yr ${months} mos`;
+    }
+  }g
 };
 
 experiences = experiences.map((experience) => {
