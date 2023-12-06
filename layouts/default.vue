@@ -1,4 +1,6 @@
 <template>
+  <Navigation />
+
   <main>
     <slot />
   </main>
@@ -6,9 +8,6 @@
 
 <script setup>
 useHead({
-  htmlAttrs: {
-    class: "bg-gray-100",
-  },
   bodyAttrs: {
     class: "bg-gray-100 antialiased",
   },
