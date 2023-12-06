@@ -16,7 +16,7 @@
               href="/"
               class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500"
               :class="{
-                ' border-b-2 border-indigo-500 text-gray-900': $route.path === '/',
+                'border-b-2 border-indigo-500 text-gray-900': $route.path === '/',
               }"
             >
               Home
@@ -52,9 +52,9 @@
         <DisclosureButton
           as="a"
           href="/"
-          class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-500"
+          class="block py-2 pl-3 pr-4 text-base font-medium text-gray-500"
           :class="{
-            'border-current border-indigo-500 bg-indigo-50 text-indigo-700':
+            'border-l-4 border-indigo-500 bg-indigo-50 text-indigo-700':
               $route.path === '/',
           }"
         >
@@ -64,9 +64,9 @@
         <DisclosureButton
           as="a"
           href="/contact"
-          class="block border-l-4 py-2 pl-3 pr-4 text-base font-medium text-gray-500"
+          class="block py-2 pl-3 pr-4 text-base font-medium text-gray-500"
           :class="{
-            'border-current border-indigo-500 bg-indigo-50 text-indigo-700':
+            'border-l-4 border-indigo-500 bg-indigo-50 text-indigo-700':
               $route.path === '/contact',
           }"
         >
