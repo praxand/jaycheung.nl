@@ -242,10 +242,6 @@ import { EnvelopeIcon } from "@heroicons/vue/24/outline";
 import { useVuelidate } from '@vuelidate/core';
 import { required, email, minLength, helpers } from '@vuelidate/validators';
 
-definePageMeta({
-  layout: false,
-});
-
 useSeoMeta({
   title: "Contact | Jay Cheung",
   ogTitle: "Contact | Jay Cheung",
